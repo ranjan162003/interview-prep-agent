@@ -1,0 +1,43 @@
+# ---------- Python (backend) ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Local SQLite database (attempts, scores, plans, chats)
+backend/data/
+*.db
+*.sqlite3
+
+# ---------- Node / React (frontend + scripts) ----------
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+npm-debug.log*
+test-results/
+playwright-report/
+
+# ---------- Secrets / local env ----------
+# API keys live in the OS credential vault, never in files — but keep local overrides out too.
+.env
+.env.*
+!.env.example
+
+# ---------- Personal notes / plans ----------
+# Planning notes stay local; README and docs/ are committed.
+*-plan.md
+
+# ---------- Editor / OS ----------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.log

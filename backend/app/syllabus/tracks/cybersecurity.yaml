@@ -1,0 +1,348 @@
+# Cybersecurity track (SOC analyst, security engineer, junior pentester).
+# Topics and subtopics are listed in learning order: the planner works through them top to bottom.
+# difficulty: 1 = fundamentals, 2 = intermediate, 3 = advanced.
+# Subtopic ids must be unique within the track. `position` orders the tracks in the track picker.
+id: cybersecurity
+name: Cybersecurity
+position: 2
+description: Networking, web and cloud security, cryptography, Windows and Linux, threat hunting, incident response and GRC for security roles.
+has_coding_problems: false
+topics:
+  - id: sec-foundations
+    name: Security foundations
+    description: The vocabulary and principles every security interview starts with.
+    subtopics:
+      - id: cia-triad
+        name: CIA triad and core principles
+        difficulty: 1
+        key_concepts: [confidentiality integrity and availability, least privilege, defence in depth, separation of duties, zero trust]
+      - id: risk-basics
+        name: Threats, vulnerabilities and risk
+        difficulty: 1
+        key_concepts: [threat vs vulnerability vs risk, attack surface, likelihood and impact, risk treatment (accept, mitigate, transfer, avoid)]
+      - id: security-controls
+        name: Types of security controls
+        difficulty: 1
+        key_concepts: [preventive vs detective vs corrective, technical vs administrative vs physical, compensating controls]
+
+  - id: sec-networking
+    name: Networking for security
+    description: The protocols attackers abuse and defenders watch.
+    subtopics:
+      - id: tcp-ip-security
+        name: TCP/IP and ports
+        difficulty: 1
+        key_concepts: [OSI layers, three-way handshake, common ports, TCP flags, port scanning]
+      - id: network-attacks
+        name: Common network attacks
+        difficulty: 2
+        key_concepts: [ARP spoofing, man-in-the-middle, DoS vs DDoS, SYN flood, VLAN hopping]
+      - id: dns-security
+        name: DNS and its attacks
+        difficulty: 2
+        key_concepts: [DNS resolution, DNS spoofing and cache poisoning, DNS tunnelling, DNSSEC]
+      - id: tls
+        name: TLS and HTTPS
+        difficulty: 2
+        key_concepts: [TLS handshake, certificates and chains of trust, man-in-the-middle, HSTS]
+      - id: network-defences
+        name: Firewalls, IDS and IPS
+        difficulty: 2
+        key_concepts: [stateful vs stateless firewalls, IDS vs IPS, signature vs anomaly detection, network segmentation]
+      - id: vpn-remote-access
+        name: VPNs and secure remote access
+        difficulty: 2
+        key_concepts: [IPsec vs SSL VPN, split tunnelling, bastion hosts, zero trust network access]
+      - id: packet-analysis
+        name: Packet analysis with Wireshark
+        difficulty: 3
+        key_concepts: [capture filters vs display filters, following a TCP stream, spotting scans and beaconing, tcpdump basics]
+
+  - id: os-security
+    name: Linux and Windows security
+    description: How the two main operating systems are attacked and hardened.
+    subtopics:
+      - id: linux-basics
+        name: Linux for security
+        difficulty: 1
+        key_concepts: [file permissions, users and sudo, processes, grep awk and find, cron]
+      - id: linux-hardening
+        name: Linux privilege escalation and hardening
+        difficulty: 2
+        key_concepts: [SUID binaries, misconfigured sudo, writable cron jobs, SSH hardening, patching]
+      - id: windows-basics
+        name: Windows security basics
+        difficulty: 1
+        key_concepts: [users groups and UAC, the registry, services, PowerShell, NTFS permissions]
+      - id: active-directory
+        name: Active Directory
+        difficulty: 2
+        key_concepts: [domains forests and OUs, Group Policy, Kerberos authentication, NTLM, domain admins]
+      - id: ad-attacks
+        name: Active Directory attacks
+        difficulty: 3
+        key_concepts: [pass-the-hash, Kerberoasting, golden and silver tickets, BloodHound, credential dumping with Mimikatz]
+
+  - id: cryptography
+    name: Cryptography basics
+    description: Enough cryptography to choose the right tool and spot misuse.
+    subtopics:
+      - id: symmetric-asymmetric
+        name: Symmetric vs asymmetric encryption
+        difficulty: 1
+        key_concepts: [AES, RSA, key exchange, why both are used together]
+      - id: hashing-security
+        name: Hashing and integrity
+        difficulty: 1
+        key_concepts: [hash properties, SHA-256, salting, bcrypt and argon2, HMAC]
+      - id: pki
+        name: PKI and digital signatures
+        difficulty: 2
+        key_concepts: [certificate authorities, signing vs encrypting, certificate revocation]
+      - id: crypto-attacks
+        name: Cryptographic attacks and misuse
+        difficulty: 3
+        key_concepts: [rainbow tables, downgrade attacks, ECB mode weakness, weak randomness, key management mistakes]
+
+  - id: iam
+    name: Identity and access management
+    description: Who can log in, and what they're allowed to do once they have.
+    subtopics:
+      - id: authn-authz
+        name: Authentication and authorisation
+        difficulty: 1
+        key_concepts: [authentication vs authorisation, MFA factors, password policies, account lockout]
+      - id: access-control-models
+        name: Access control models
+        difficulty: 2
+        key_concepts: [RBAC, ABAC, DAC vs MAC, least privilege, privileged access management]
+      - id: sso-federation
+        name: SSO and federation
+        difficulty: 2
+        key_concepts: [SAML, OAuth 2.0, OpenID Connect, tokens and scopes, identity providers]
+
+  - id: owasp
+    name: Web security (OWASP Top 10)
+    description: The most common web vulnerabilities, how they're exploited and how they're fixed.
+    subtopics:
+      - id: http-for-security
+        name: HTTP for security testers
+        difficulty: 1
+        key_concepts: [requests and responses, cookies and sessions, same-origin policy, CORS, security headers]
+      - id: injection
+        name: SQL injection and other injection
+        difficulty: 1
+        key_concepts: [how SQL injection works, parameterised queries, command injection, input validation]
+      - id: xss
+        name: Cross-site scripting (XSS)
+        difficulty: 2
+        key_concepts: [reflected vs stored vs DOM XSS, output encoding, Content Security Policy]
+      - id: broken-access-control
+        name: Broken access control
+        difficulty: 2
+        key_concepts: [IDOR, privilege escalation, server-side authorisation checks, least privilege]
+      - id: auth-session
+        name: Authentication and sessions
+        difficulty: 2
+        key_concepts: [password hashing, MFA, session fixation, secure cookie flags, JWT pitfalls]
+      - id: csrf-ssrf
+        name: CSRF and SSRF
+        difficulty: 3
+        key_concepts: [CSRF tokens, SameSite cookies, SSRF to cloud metadata, allow-lists]
+      - id: file-upload-deserialization
+        name: File uploads, path traversal and deserialisation
+        difficulty: 3
+        key_concepts: [unrestricted file upload, path traversal, insecure deserialisation, XXE]
+      - id: api-security
+        name: API security
+        difficulty: 2
+        key_concepts: [OWASP API Top 10, broken object level authorisation, mass assignment, rate limiting, API keys vs tokens]
+      - id: burp-suite
+        name: Testing with Burp Suite
+        difficulty: 2
+        key_concepts: [proxy and intercept, Repeater, Intruder, scanning, scope]
+
+  - id: vuln-pentest
+    name: Vulnerability management and penetration testing
+    description: Finding weaknesses before attackers do, and fixing them in the right order.
+    subtopics:
+      - id: vuln-management
+        name: Vulnerability management
+        difficulty: 1
+        key_concepts: [CVE and CVSS, vulnerability scanning with Nessus, prioritising by risk, patch management, false positives]
+      - id: pentest-methodology
+        name: Penetration testing methodology
+        difficulty: 2
+        key_concepts: [rules of engagement and scope, reconnaissance, scanning and enumeration, exploitation, reporting]
+      - id: recon-tools
+        name: Reconnaissance and scanning tools
+        difficulty: 2
+        key_concepts: [OSINT, Nmap scan types, subdomain enumeration, banner grabbing, Shodan]
+      - id: exploitation-basics
+        name: Exploitation and post-exploitation
+        difficulty: 3
+        key_concepts: [Metasploit basics, reverse vs bind shells, privilege escalation, persistence, lateral movement]
+
+  - id: threats
+    name: Threats and malware
+    description: Who attacks, how, and what their tools look like.
+    subtopics:
+      - id: malware-types
+        name: Malware and attack types
+        difficulty: 1
+        key_concepts: [ransomware, trojans, phishing, privilege escalation, lateral movement]
+      - id: social-engineering
+        name: Phishing and social engineering
+        difficulty: 1
+        key_concepts: [phishing vs spear phishing vs whaling, pretexting, business email compromise, SPF DKIM and DMARC, user awareness]
+      - id: threat-actors
+        name: Threat actors and threat intelligence
+        difficulty: 2
+        key_concepts: [nation states vs cybercriminals vs insiders, APTs, IOCs vs TTPs, threat intel feeds, the pyramid of pain]
+      - id: mitre-attack
+        name: MITRE ATT&CK and the kill chain
+        difficulty: 2
+        key_concepts: [tactics vs techniques, cyber kill chain, mapping detections to ATT&CK]
+      - id: malware-analysis
+        name: Malware analysis basics
+        difficulty: 3
+        key_concepts: [static vs dynamic analysis, sandboxes, strings and hashes, VirusTotal, YARA rules]
+
+  - id: linux-logs
+    name: Detection, logs and SIEM
+    description: Reading systems and logs the way a SOC analyst does.
+    subtopics:
+      - id: log-sources
+        name: Log sources
+        difficulty: 2
+        key_concepts: [auth.log and syslog, Windows event IDs, web server access logs, firewall logs]
+      - id: log-analysis
+        name: Spotting attacks in logs
+        difficulty: 2
+        key_concepts: [brute-force patterns, suspicious user agents, unusual hours, impossible travel]
+      - id: endpoint-security
+        name: Endpoint security and EDR
+        difficulty: 2
+        key_concepts: [antivirus vs EDR vs XDR, Sysmon, process trees, living-off-the-land binaries, application allow-listing]
+      - id: siem
+        name: SIEM and correlation
+        difficulty: 3
+        key_concepts: [what a SIEM does, correlation rules, false positives, alert tuning]
+      - id: detection-engineering
+        name: Writing detections
+        difficulty: 3
+        key_concepts: [Splunk SPL basics, Sigma rules, detection logic and thresholds, testing detections, SOAR playbooks]
+      - id: threat-hunting
+        name: Threat hunting
+        difficulty: 3
+        key_concepts: [hypothesis-driven hunting, indicators of compromise vs attack, threat intelligence]
+
+  - id: incident-response
+    name: Incident response and forensics
+    description: What to do, in order, when something goes wrong.
+    subtopics:
+      - id: ir-lifecycle
+        name: The incident response lifecycle
+        difficulty: 2
+        key_concepts: [preparation, detection and analysis, containment, eradication, recovery, lessons learnt]
+      - id: soc-scenarios
+        name: SOC analyst scenarios
+        difficulty: 2
+        key_concepts: [triaging an alert, phishing email investigation, escalation, writing an incident report]
+      - id: ransomware-response
+        name: Ransomware response
+        difficulty: 3
+        key_concepts: [isolating hosts, identifying patient zero, backups and recovery, whether to pay, notifying stakeholders]
+      - id: forensics-basics
+        name: Digital forensics basics
+        difficulty: 3
+        key_concepts: [order of volatility, chain of custody, disk and memory images, timeline analysis]
+      - id: memory-forensics
+        name: Memory and disk forensics tools
+        difficulty: 3
+        key_concepts: [Volatility, FTK Imager, Autopsy, artefacts like prefetch and shellbags, file carving]
+
+  - id: cloud-security
+    name: Cloud security
+    description: Securing workloads in AWS, Azure and GCP.
+    subtopics:
+      - id: shared-responsibility
+        name: Shared responsibility and cloud basics
+        difficulty: 1
+        key_concepts: [shared responsibility model, IaaS vs PaaS vs SaaS, regions and accounts, cloud attack surface]
+      - id: cloud-iam
+        name: Cloud IAM
+        difficulty: 2
+        key_concepts: [IAM users roles and policies, least privilege policies, access keys vs roles, cross-account access]
+      - id: cloud-misconfigurations
+        name: Common cloud misconfigurations
+        difficulty: 2
+        key_concepts: [public S3 buckets, open security groups, exposed metadata service, unencrypted storage, logging turned off]
+      - id: cloud-monitoring
+        name: Cloud logging and detection
+        difficulty: 3
+        key_concepts: [CloudTrail, GuardDuty, VPC flow logs, CSPM tools, cloud incident response]
+
+  - id: devsecops
+    name: Application and container security
+    description: Building security into the way software is written and shipped.
+    subtopics:
+      - id: secure-sdlc
+        name: Secure software development
+        difficulty: 2
+        key_concepts: [threat modelling with STRIDE, secure code review, SAST vs DAST vs SCA, secrets in code]
+      - id: container-security
+        name: Container and Kubernetes security
+        difficulty: 3
+        key_concepts: [image scanning, running as non-root, container escape, Kubernetes RBAC, network policies]
+      - id: supply-chain
+        name: Software supply chain security
+        difficulty: 3
+        key_concepts: [dependency confusion, SBOM, signed builds, the SolarWinds and Log4Shell lessons]
+
+  - id: grc
+    name: Governance, risk and compliance
+    description: The frameworks and laws that shape how organisations do security.
+    subtopics:
+      - id: security-frameworks
+        name: Security frameworks
+        difficulty: 2
+        key_concepts: [NIST Cybersecurity Framework, ISO 27001, CIS Controls, SOC 2]
+      - id: compliance-privacy
+        name: Compliance and privacy laws
+        difficulty: 2
+        key_concepts: [GDPR, PCI DSS, HIPAA, India's DPDP Act, data classification]
+      - id: risk-management
+        name: Risk assessment and policies
+        difficulty: 2
+        key_concepts: [risk registers, qualitative vs quantitative risk, security policies vs standards vs procedures, BCP and DR, third-party risk]
+
+  - id: sec-scripting
+    name: Scripting for security
+    description: Automating the boring parts of security work.
+    subtopics:
+      - id: python-for-security
+        name: Python for security tasks
+        difficulty: 2
+        key_concepts: [parsing logs with regex, calling APIs with requests, hashing files, writing a simple port scanner]
+      - id: bash-powershell
+        name: Bash and PowerShell for defenders
+        difficulty: 2
+        key_concepts: [one-liners for log triage, PowerShell for Windows investigation, scheduled scripts, recognising malicious PowerShell]
+
+  - id: sec-behavioural
+    name: Behavioural
+    description: Telling clear stories about your experience with the STAR method.
+    subtopics:
+      - id: sec-star-method
+        name: The STAR method
+        difficulty: 1
+        key_concepts: [situation, task, action, result, keeping answers to two minutes]
+      - id: sec-why-security
+        name: Why security, and your home lab
+        difficulty: 1
+        key_concepts: [your motivation for security, home lab and CTF experience, certifications you're working towards, staying current with news]
+      - id: sec-pressure
+        name: Working under pressure
+        difficulty: 2
+        key_concepts: [handling an active incident, communicating with non-technical people, ethics and responsible disclosure]
