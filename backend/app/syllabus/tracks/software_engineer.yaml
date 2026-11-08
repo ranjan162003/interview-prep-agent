@@ -1,0 +1,269 @@
+# Software engineer track.
+# Topics and subtopics are listed in learning order: the planner works through them top to bottom.
+# difficulty: 1 = fundamentals, 2 = intermediate, 3 = advanced.
+# Subtopic ids must be unique within the track. `position` orders the tracks in the track picker.
+id: software_engineer
+name: Software engineer
+position: 1
+description: Data structures and algorithms, CS fundamentals, system design basics and behavioural questions for SDE roles.
+has_coding_problems: true
+topics:
+  - id: dsa
+    name: Data structures and algorithms
+    description: The core of most coding rounds, from arrays up to dynamic programming.
+    subtopics:
+      - id: complexity-analysis
+        name: Time and space complexity
+        difficulty: 1
+        key_concepts: [Big-O notation, best/average/worst case, amortised analysis, space complexity of recursion]
+      - id: arrays-strings
+        name: Arrays and strings
+        difficulty: 1
+        key_concepts: [two pointers, sliding window, prefix sums, in-place modification, string building]
+      - id: hashing
+        name: Hash maps and sets
+        difficulty: 1
+        key_concepts: [hash functions, collisions, frequency counting, two-sum pattern, lookup trade-offs]
+      - id: linked-lists
+        name: Linked lists
+        difficulty: 1
+        key_concepts: [singly vs doubly linked, fast and slow pointers, reversal, dummy head node, cycle detection]
+      - id: stacks-queues
+        name: Stacks and queues
+        difficulty: 1
+        key_concepts: [LIFO vs FIFO, monotonic stack, deque, balanced parentheses, queue using stacks]
+      - id: recursion-backtracking
+        name: Recursion and backtracking
+        difficulty: 2
+        key_concepts: [base case, call stack, subsets and permutations, pruning, N-Queens]
+      - id: sorting-searching
+        name: Sorting and binary search
+        difficulty: 2
+        key_concepts: [merge sort, quick sort, stability, binary search on answer, lower/upper bound]
+      - id: trees
+        name: Binary trees and BSTs
+        difficulty: 2
+        key_concepts: [DFS traversals, BFS level order, BST property, height and diameter, lowest common ancestor]
+      - id: heaps
+        name: Heaps and priority queues
+        difficulty: 2
+        key_concepts: [heapify, top-k elements, merge k sorted lists, two-heap median]
+      - id: graphs
+        name: Graphs
+        difficulty: 3
+        key_concepts: [adjacency list vs matrix, BFS and DFS, topological sort, Dijkstra, union-find]
+      - id: dynamic-programming
+        name: Dynamic programming
+        difficulty: 3
+        key_concepts: [overlapping subproblems, memoisation vs tabulation, knapsack, longest common subsequence, state design]
+      - id: greedy
+        name: Greedy algorithms
+        difficulty: 3
+        key_concepts: [greedy choice property, interval scheduling, exchange argument, when greedy fails]
+
+  - id: oop
+    name: Object-oriented programming
+    description: Design questions about classes, interfaces and the principles behind them.
+    subtopics:
+      - id: oop-pillars
+        name: The four pillars
+        difficulty: 1
+        key_concepts: [encapsulation, abstraction, inheritance, polymorphism]
+      - id: solid
+        name: SOLID principles
+        difficulty: 2
+        key_concepts: [single responsibility, open/closed, Liskov substitution, interface segregation, dependency inversion]
+      - id: design-patterns
+        name: Common design patterns
+        difficulty: 2
+        key_concepts: [singleton, factory, strategy, observer, composition over inheritance]
+      - id: low-level-design
+        name: Low-level design
+        difficulty: 3
+        key_concepts: [class diagrams, modelling a parking lot, modelling a library system, extensibility]
+
+  - id: dbms
+    name: Databases and SQL
+    description: Relational design, SQL queries and how databases keep data consistent.
+    subtopics:
+      - id: sql-basics
+        name: SQL queries
+        difficulty: 1
+        key_concepts: [SELECT and WHERE, GROUP BY and HAVING, ORDER BY, aggregate functions]
+      - id: sql-joins
+        name: Joins and subqueries
+        difficulty: 2
+        key_concepts: [inner vs outer joins, self join, correlated subqueries, window functions]
+      - id: normalization
+        name: Normalisation
+        difficulty: 2
+        key_concepts: [functional dependencies, 1NF 2NF 3NF BCNF, denormalisation trade-offs]
+      - id: transactions
+        name: Transactions and ACID
+        difficulty: 2
+        key_concepts: [atomicity, isolation levels, dirty and phantom reads, locking, deadlocks]
+      - id: indexing
+        name: Indexing
+        difficulty: 3
+        key_concepts: [B+ trees, clustered vs non-clustered, composite indexes, when indexes hurt]
+
+  - id: os
+    name: Operating systems
+    description: How programs run, share the CPU and use memory.
+    subtopics:
+      - id: processes-threads
+        name: Processes and threads
+        difficulty: 1
+        key_concepts: [process vs thread, context switch, process states, user vs kernel mode]
+      - id: cpu-scheduling
+        name: CPU scheduling
+        difficulty: 2
+        key_concepts: [FCFS, shortest job first, round robin, priority scheduling, starvation]
+      - id: synchronization
+        name: Synchronisation
+        difficulty: 2
+        key_concepts: [race conditions, mutex vs semaphore, critical section, producer-consumer]
+      - id: deadlocks
+        name: Deadlocks
+        difficulty: 2
+        key_concepts: [four necessary conditions, prevention vs avoidance, banker's algorithm, detection]
+      - id: memory-management
+        name: Memory management
+        difficulty: 3
+        key_concepts: [paging, segmentation, virtual memory, page replacement (LRU, FIFO), thrashing]
+
+  - id: networks
+    name: Computer networks
+    description: How data moves between machines, from the OSI model to HTTP.
+    subtopics:
+      - id: osi-tcpip
+        name: OSI and TCP/IP models
+        difficulty: 1
+        key_concepts: [seven OSI layers, TCP/IP layers, encapsulation, what lives at each layer]
+      - id: tcp-udp
+        name: TCP vs UDP
+        difficulty: 1
+        key_concepts: [three-way handshake, reliability, flow control, congestion control, when to use UDP]
+      - id: http-https
+        name: HTTP and HTTPS
+        difficulty: 2
+        key_concepts: [methods and status codes, headers, cookies and sessions, TLS handshake, HTTP/2]
+      - id: dns
+        name: DNS and what happens when you type a URL
+        difficulty: 2
+        key_concepts: [DNS resolution, record types, caching, the full request journey]
+
+  - id: system-design
+    name: System design
+    description: Designing systems that scale, from the building blocks to full design interviews.
+    subtopics:
+      - id: design-interview-approach
+        name: How to approach a design interview
+        difficulty: 1
+        key_concepts: [clarifying functional and non-functional requirements, high-level design first, identifying bottlenecks, discussing trade-offs out loud]
+      - id: estimation
+        name: Back-of-the-envelope estimation
+        difficulty: 1
+        key_concepts: [requests per second from daily users, storage growth per year, bandwidth, latency numbers every engineer should know, read-to-write ratio]
+      - id: scalability
+        name: Scalability fundamentals
+        difficulty: 2
+        key_concepts: [vertical vs horizontal scaling, stateless services, latency vs throughput, availability and the nines, single points of failure]
+      - id: load-balancing
+        name: Load balancing
+        difficulty: 2
+        key_concepts: [layer 4 vs layer 7 load balancers, round robin vs least connections vs IP hash, health checks, sticky sessions, reverse proxies]
+      - id: api-design
+        name: API design
+        difficulty: 2
+        key_concepts: [REST resources and verbs, REST vs GraphQL vs gRPC, pagination, versioning, idempotency keys]
+      - id: caching
+        name: Caching
+        difficulty: 2
+        key_concepts: [cache-aside, write-through vs write-back, eviction policies, CDN, cache invalidation, cache stampede]
+      - id: databases-at-scale
+        name: Databases at scale
+        difficulty: 2
+        key_concepts: [replication (leader-follower, multi-leader), read replicas and replication lag, SQL vs NoSQL, choosing a data store]
+      - id: partitioning
+        name: Sharding and consistent hashing
+        difficulty: 3
+        key_concepts: [range vs hash partitioning, hot partitions, consistent hashing, virtual nodes, resharding]
+      - id: consistency-cap
+        name: Consistency and CAP
+        difficulty: 3
+        key_concepts: [CAP theorem, PACELC, strong vs eventual consistency, quorum reads and writes, read-your-writes]
+      - id: messaging-async
+        name: Message queues and async processing
+        difficulty: 2
+        key_concepts: [queues vs pub/sub, Kafka vs RabbitMQ, at-least-once vs exactly-once delivery, dead-letter queues, back-pressure]
+      - id: microservices
+        name: Monoliths and microservices
+        difficulty: 2
+        key_concepts: [monolith vs microservices trade-offs, service discovery, API gateway, service-to-service communication, the saga pattern]
+      - id: reliability
+        name: Reliability and fault tolerance
+        difficulty: 3
+        key_concepts: [redundancy and failover, retries with exponential backoff, circuit breakers, timeouts, graceful degradation]
+      - id: realtime-communication
+        name: Real-time communication
+        difficulty: 2
+        key_concepts: [polling vs long polling, WebSockets, server-sent events, presence and fan-out]
+      - id: storage-and-search
+        name: Blob storage and search
+        difficulty: 2
+        key_concepts: [object storage for files and media, pre-signed URLs, inverted index, Elasticsearch basics, typeahead]
+      - id: observability-security
+        name: Observability and security in design
+        difficulty: 2
+        key_concepts: [logs vs metrics vs traces, alerting and SLOs, authentication vs authorisation, OAuth 2.0 and JWT, rate limiting]
+      - id: classic-designs
+        name: Classic design questions
+        difficulty: 3
+        key_concepts: [URL shortener, rate limiter, chat system like WhatsApp, news feed, notification system]
+      - id: advanced-designs
+        name: Advanced design questions
+        difficulty: 3
+        key_concepts: [video streaming like YouTube, ride sharing like Uber, file storage like Google Drive, web crawler, distributed key-value store]
+
+  - id: python
+    name: Python language
+    description: Language details interviewers ask about when you code in Python.
+    subtopics:
+      - id: python-data-model
+        name: Data types and mutability
+        difficulty: 1
+        key_concepts: [mutable vs immutable, list vs tuple vs set vs dict, shallow vs deep copy, is vs ==]
+      - id: python-functions
+        name: Functions, closures and decorators
+        difficulty: 2
+        key_concepts: [args and kwargs, default argument pitfall, closures, decorators, lambda]
+      - id: python-iteration
+        name: Iterators, generators and comprehensions
+        difficulty: 2
+        key_concepts: [iterator protocol, yield, generator expressions, comprehensions, itertools]
+      - id: python-internals
+        name: Python internals
+        difficulty: 3
+        key_concepts: [GIL, memory management and garbage collection, threading vs multiprocessing vs asyncio]
+
+  - id: behavioural
+    name: Behavioural
+    description: Telling clear stories about your experience with the STAR method.
+    subtopics:
+      - id: star-method
+        name: The STAR method
+        difficulty: 1
+        key_concepts: [situation, task, action, result, keeping answers to two minutes]
+      - id: tell-me-about-yourself
+        name: Tell me about yourself
+        difficulty: 1
+        key_concepts: [present-past-future structure, tailoring to the role, a strong closing line]
+      - id: teamwork-conflict
+        name: Teamwork and conflict
+        difficulty: 2
+        key_concepts: [disagreeing respectfully, owning mistakes, helping a teammate, giving and receiving feedback]
+      - id: projects-impact
+        name: Projects and impact
+        difficulty: 2
+        key_concepts: [your hardest bug, a project you're proud of, measurable results, trade-offs you made]
